@@ -77,7 +77,7 @@
         [self.navigationController.navigationBar setShadowImage:self.km_transitionNavigationBar.shadowImage];
         if (!transitionViewController || [transitionViewController isEqual:self]) {
             [self.km_transitionNavigationBar removeFromSuperview];
-            self.km_transitionNavigationBar = nil; 
+            self.km_transitionNavigationBar = nil;
         }
     }
     if ([transitionViewController isEqual:self]) {

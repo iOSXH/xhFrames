@@ -124,7 +124,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   KMNavigationBarTransition:
-    :commit: be47b16bfbec436f25ee431de5bd78be48e65489
+    :commit: 858074a49adedc30e8a9c9ca1b402234680b4bd3
     :git: https://github.com/iOSXH/KMNavigationBarTransition.git
 
 SPEC CHECKSUMS:
