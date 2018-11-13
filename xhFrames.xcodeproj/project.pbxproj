@@ -65,6 +65,8 @@
 		DDA921F7219AACB400D44A9F /* NSBundle+XHLanguages.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA921F6219AACB400D44A9F /* NSBundle+XHLanguages.m */; };
 		DDA921FA219AB2A500D44A9F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDA921FC219AB2A500D44A9F /* Localizable.strings */; };
 		DDA92200219AB4D700D44A9F /* LanguageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA921FF219AB4D700D44A9F /* LanguageSettingsViewController.m */; };
+		DDA92203219ADEF900D44A9F /* Test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA92202219ADEF900D44A9F /* Test1ViewController.m */; };
+		DDA92206219ADF0B00D44A9F /* Test2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA92205219ADF0B00D44A9F /* Test2ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +208,10 @@
 		DDA921FD219AB41E00D44A9F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		DDA921FE219AB4D700D44A9F /* LanguageSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageSettingsViewController.h; sourceTree = "<group>"; };
 		DDA921FF219AB4D700D44A9F /* LanguageSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageSettingsViewController.m; sourceTree = "<group>"; };
+		DDA92201219ADEF900D44A9F /* Test1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test1ViewController.h; sourceTree = "<group>"; };
+		DDA92202219ADEF900D44A9F /* Test1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test1ViewController.m; sourceTree = "<group>"; };
+		DDA92204219ADF0B00D44A9F /* Test2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test2ViewController.h; sourceTree = "<group>"; };
+		DDA92205219ADF0B00D44A9F /* Test2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test2ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,6 +614,10 @@
 		DD268674219A778200F1B653 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DDA92201219ADEF900D44A9F /* Test1ViewController.h */,
+				DDA92202219ADEF900D44A9F /* Test1ViewController.m */,
+				DDA92204219ADF0B00D44A9F /* Test2ViewController.h */,
+				DDA92205219ADF0B00D44A9F /* Test2ViewController.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -824,6 +834,7 @@
 				DD268641219A6FE600F1B653 /* XHBaseCollectionViewCell.m in Sources */,
 				DD26865E219A6FE600F1B653 /* URLRouter.m in Sources */,
 				DD268663219A6FE600F1B653 /* AccountManager.m in Sources */,
+				DDA92203219ADEF900D44A9F /* Test1ViewController.m in Sources */,
 				DD26865F219A6FE600F1B653 /* CNPPopupController.m in Sources */,
 				DD268640219A6FE600F1B653 /* XHBaseTabBtn.m in Sources */,
 				DD26865D219A6FE600F1B653 /* NSURL+QueryDictionary.m in Sources */,
@@ -850,6 +861,7 @@
 				DD268662219A6FE600F1B653 /* TYCyclePagerTransformLayout.m in Sources */,
 				BBE2DAD821990EB80076C54B /* ViewController.m in Sources */,
 				DD26866E219A6FE600F1B653 /* XHExtendButton.m in Sources */,
+				DDA92206219ADF0B00D44A9F /* Test2ViewController.m in Sources */,
 				DD268661219A6FE600F1B653 /* TYCyclePagerView.m in Sources */,
 				DD268642219A6FE600F1B653 /* MineViewController.m in Sources */,
 				DD26863E219A6FE600F1B653 /* XHBaseTableViewCell.m in Sources */,

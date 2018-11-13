@@ -103,7 +103,7 @@
     SEL action = left?(@selector(leftItemDidClicked:)):(@selector(rightItemDidClicked:));
     
     if (!emptyString(title)) {
-        barItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:action];
+        barItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(title, nil) style:UIBarButtonItemStylePlain target:self action:action];
         barItem.sakura
         .titleTextAttributes(self.navItemColorKey, UIControlStateNormal);
 //        .titleTextAttributes(self.navItemColorKey, UIControlStateHighlighted)

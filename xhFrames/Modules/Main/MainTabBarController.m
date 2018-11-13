@@ -11,6 +11,8 @@
 #import "MineViewController.h"
 #import "LoginViewController.h"
 
+#import "Test1ViewController.h"
+#import "Test2ViewController.h"
 
 @interface MainTabBarController ()
 
@@ -29,7 +31,16 @@
     mineVc.tabBarItem.title = @"";
     
     
-    [self setViewControllers:@[mineNav]];
+    Test1ViewController *test1Vc = [[Test1ViewController alloc] init];
+    XHBaseNavigationController *test1Nav = [[XHBaseNavigationController alloc] initWithRootViewController:test1Vc];
+    test1Vc.tabBarItem.title = @"";
+    
+    Test2ViewController *test2Vc = [[Test2ViewController alloc] init];
+    XHBaseNavigationController *test2Nav = [[XHBaseNavigationController alloc] initWithRootViewController:test2Vc];
+    test2Vc.tabBarItem.title = @"";
+    
+    
+    [self setViewControllers:@[test1Nav, test2Nav, mineNav]];
     
     
     
@@ -125,15 +136,15 @@
 }
 
 
-- (BOOL)tabBar:(XHBaseTabBar *)tabBar shouldSelectIndex:(NSInteger)index{
-    
-    
-    if (index != 1 && [AccountManager sharedManager].loginState != LoginState_In) {
-        [self gotoLoginAnimated:YES];
-        return NO;
-    }
-    return YES;
-}
+//- (BOOL)tabBar:(XHBaseTabBar *)tabBar shouldSelectIndex:(NSInteger)index{
+//    
+//    
+//    if (index != 1 && [AccountManager sharedManager].loginState != LoginState_In) {
+//        [self gotoLoginAnimated:YES];
+//        return NO;
+//    }
+//    return YES;
+//}
 
 - (void)tabBar:(XHBaseTabBar *)tabBar didSelectIndex:(NSInteger)index{
     [super tabBar:tabBar didSelectIndex:index];

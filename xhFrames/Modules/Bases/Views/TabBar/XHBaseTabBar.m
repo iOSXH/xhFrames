@@ -59,6 +59,7 @@
     
     if (!self.bgView) {
         self.bgView = [[UIView alloc] initWithFrame:self.bounds];
+        self.bgView.sakura.backgroundColor(kThemeKey_BGC01);
         [self addSubview:self.bgView];
     }
     
@@ -79,7 +80,18 @@
     }
     
     
-    NSMutableArray *tabConfigs = [NSMutableArray arrayWithArray:@[
+    NSMutableArray *tabConfigs = [NSMutableArray arrayWithArray:@[@{@"imageNor":@"icon_tab_collect_unselected",
+                                                                    @"imageSel":@"icon_tab_collect_selected",
+                                                                    @"titleColrNor":@"#ACB5BF",
+                                                                    @"titleColrSel":@"#333333",
+                                                                    @"title":@"测试1"
+                                                                    },
+                                                                  @{@"imageNor":@"icon_tab_event_unselected",
+                                                                    @"imageSel":@"icon_tab_event_selected",
+                                                                    @"titleColrNor":@"#ACB5BF",
+                                                                    @"titleColrSel":@"#333333",
+                                                                    @"title":@"测试2"
+                                                                    },
                                                                   @{@"imageNor":@"icon_tab_mine_unselected",
                                                                     @"imageSel":@"icon_tab_mine_selected",
                                                                     @"titleColrNor":@"#ACB5BF",
