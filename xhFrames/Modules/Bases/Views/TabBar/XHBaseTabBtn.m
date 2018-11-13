@@ -34,7 +34,7 @@
         
         _titleLab = [UILabel newAutoLayoutView];
         _titleLab.font = [UIFont systemFontOfSize:10];
-        _titleLab.text = [config objectForKey:@"title"];
+        _titleLab.text = NSLocalizedString([config objectForKey:@"title"], nil) ;
         [self addSubview:_titleLab];
         [_titleLab autoAlignAxisToSuperviewAxis:ALAxisVertical];
         [_titleLab autoPinEdgeToSuperviewEdge:ALEdgeBottom];

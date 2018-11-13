@@ -47,22 +47,20 @@ static NSString * const kAPPBaseURL = @"sentiment://sentiment.xianghui.com";
 
 static NSString * const kAPPHomeTabDidSelectNotificationKey = @"kAPPHomeTabDidSelectNotificationKey";
 
+
+static NSString * const kURLParam_NoLogin = @"noNeedLogin";
+
 static NSString * const kURLRouter_HomeTab = @"home_tab";                           ///< 系统消息界面
 
 #pragma mark 页面路由key
 static NSString * const kURLRouter_Main = @"main";                                  ///< 返回主页
-
-static NSString * const kURLRouter_Search = @"search";                              ///< 搜索
-static NSString * const kURLRouter_CompanyDetail = @"company_details";              ///< 公司详情 ?article_id=xxx&picture_url==
-static NSString * const kURLRouter_NewsDetail = @"news_details";                    ///< 资讯详情
-static NSString * const kURLRouter_EventDetail = @"event_details";                  ///< 事件详情
-static NSString * const kURLRouter_ArticleDetail = @"article_details";              ///< 文章详情
 
 
 #pragma mark action路由key
 static NSString * const kURLRouter_NewsShare = @"news_share";                       ///< 资讯详情分享
 static NSString * const kURLRouter_AppShare = @"app_share";                         ///< 资讯详情分享
 static NSString * const kURLRouter_ClearCache = @"clear_cache";                     ///< 清理缓存
+static NSString * const kURLRouter_Languages = @"languages";                        ///< 多语言
 
 
 #pragma mark private路由key

@@ -221,6 +221,9 @@
                             @{@"leftTitle":@"声明条款",
                               @"url":[NSURL URLWithString:kUserAgreementURL]
                               },
+                            @{@"leftTitle":@"多语言",
+                              @"url":[[URLRouter sharedRouter] urlRouterWithPath:kURLRouter_Languages component:nil params:@{kURLParam_NoLogin:@(1)}]
+                              },
                             @{@"leftTitle":@"版本",
                               @"rightTitle":getString(APPVersion),
                               @"hideRight":@(YES)

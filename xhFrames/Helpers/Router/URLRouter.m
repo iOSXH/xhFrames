@@ -15,6 +15,7 @@
 
 #import "XHBaseNavigationController.h"
 #import "WebViewController.h"
+#import "LanguageSettingsViewController.h"
 
 @interface URLRouter ()
 
@@ -235,9 +236,9 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
             [params addEntriesFromDictionary:extra];
         }
         
-        if ([path isEqualToString:kURLRouter_Search]) {
-//            TSSearchViewController *vc = [[TSSearchViewController alloc] init];
-//            resultVc = vc;
+        if ([path isEqualToString:kURLRouter_Languages]) {
+            LanguageSettingsViewController *vc = [[LanguageSettingsViewController alloc] init];
+            resultVc = vc;
         }
         
         if (params.count > 0) {
@@ -272,8 +273,14 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
                 path = [paths objectOrNilAtIndex:1];
             }
         }
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:[url uq_queryDictionary]];
+        if (extra && extra.count > 0) {
+            [params addEntriesFromDictionary:extra];
+        }
         
-        if ([AccountManager sharedManager].loginState != LoginState_In) {
+        BOOL noNeedLogin = [[params objectForKey:kURLParam_NoLogin] boolValue];
+        
+        if (!noNeedLogin && [AccountManager sharedManager].loginState != LoginState_In) {
             [[AccountManager sharedManager] logout];
             return YES;
         }

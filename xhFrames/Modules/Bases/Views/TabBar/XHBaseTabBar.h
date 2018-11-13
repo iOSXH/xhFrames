@@ -33,6 +33,7 @@
 
 @property (nonatomic, assign) NSInteger selectedIndex;
 
+- (instancetype)initWithDelegate:(id<YWTabBarDelegate>)delegate;
 
 - (void)resetSubViews;
 

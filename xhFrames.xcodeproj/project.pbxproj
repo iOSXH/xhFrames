@@ -61,6 +61,10 @@
 		DD26866E219A6FE600F1B653 /* XHExtendButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD268629219A6FE600F1B653 /* XHExtendButton.m */; };
 		DD26866F219A6FE600F1B653 /* XHPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD26862A219A6FE600F1B653 /* XHPopupView.m */; };
 		DD268670219A6FE600F1B653 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD268630219A6FE600F1B653 /* UserModel.m */; };
+		DDA921F4219AA6F000D44A9F /* XHLanguagesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA921F3219AA6F000D44A9F /* XHLanguagesManager.m */; };
+		DDA921F7219AACB400D44A9F /* NSBundle+XHLanguages.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA921F6219AACB400D44A9F /* NSBundle+XHLanguages.m */; };
+		DDA921FA219AB2A500D44A9F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDA921FC219AB2A500D44A9F /* Localizable.strings */; };
+		DDA92200219AB4D700D44A9F /* LanguageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA921FF219AB4D700D44A9F /* LanguageSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +197,15 @@
 		DD26862B219A6FE600F1B653 /* XHExtendButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHExtendButton.h; sourceTree = "<group>"; };
 		DD26862D219A6FE600F1B653 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		DD268630219A6FE600F1B653 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		DD268675219A7F6C00F1B653 /* xhFrames.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xhFrames.entitlements; sourceTree = "<group>"; };
+		DDA921F2219AA6F000D44A9F /* XHLanguagesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHLanguagesManager.h; sourceTree = "<group>"; };
+		DDA921F3219AA6F000D44A9F /* XHLanguagesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHLanguagesManager.m; sourceTree = "<group>"; };
+		DDA921F5219AACB400D44A9F /* NSBundle+XHLanguages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+XHLanguages.h"; sourceTree = "<group>"; };
+		DDA921F6219AACB400D44A9F /* NSBundle+XHLanguages.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+XHLanguages.m"; sourceTree = "<group>"; };
+		DDA921FB219AB2A500D44A9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DDA921FD219AB41E00D44A9F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DDA921FE219AB4D700D44A9F /* LanguageSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageSettingsViewController.h; sourceTree = "<group>"; };
+		DDA921FF219AB4D700D44A9F /* LanguageSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +276,7 @@
 		BBE2DAD221990EB80076C54B /* xhFrames */ = {
 			isa = PBXGroup;
 			children = (
+				DD268675219A7F6C00F1B653 /* xhFrames.entitlements */,
 				DD268609219A6FE600F1B653 /* Headers */,
 				DD268627219A6FE600F1B653 /* Components */,
 				DD2685E2219A6FE600F1B653 /* Helpers */,
@@ -396,6 +410,8 @@
 				DD2685D2219A6FE600F1B653 /* View */,
 				DD2685CF219A6FE600F1B653 /* WebViewController.h */,
 				DD2685D1219A6FE600F1B653 /* WebViewController.m */,
+				DDA921FE219AB4D700D44A9F /* LanguageSettingsViewController.h */,
+				DDA921FF219AB4D700D44A9F /* LanguageSettingsViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -502,6 +518,7 @@
 			children = (
 				DD26860D219A6FE600F1B653 /* AccountManager.h */,
 				DD26860E219A6FE600F1B653 /* AccountManager.m */,
+				DDA921F1219AA6DD00D44A9F /* Languages */,
 				DD26860F219A6FE600F1B653 /* Themes */,
 			);
 			path = Managers;
@@ -546,6 +563,7 @@
 			children = (
 				DD268621219A6FE600F1B653 /* Lotties */,
 				DD268625219A6FE600F1B653 /* Fonts */,
+				DDA921FC219AB2A500D44A9F /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -593,6 +611,17 @@
 			children = (
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		DDA921F1219AA6DD00D44A9F /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				DDA921F2219AA6F000D44A9F /* XHLanguagesManager.h */,
+				DDA921F3219AA6F000D44A9F /* XHLanguagesManager.m */,
+				DDA921F5219AACB400D44A9F /* NSBundle+XHLanguages.h */,
+				DDA921F6219AACB400D44A9F /* NSBundle+XHLanguages.m */,
+			);
+			path = Languages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -664,6 +693,14 @@
 				TargetAttributes = {
 					BBE2DACF21990EB80076C54B = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					BBE2DAE721990EB90076C54B = {
 						CreatedOnToolsVersion = 10.1;
@@ -682,6 +719,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = BBE2DAC721990EB80076C54B;
 			productRefGroup = BBE2DAD121990EB80076C54B /* Products */;
@@ -704,6 +742,7 @@
 				DD26866C219A6FE600F1B653 /* refresh_pull.json in Resources */,
 				BBE2DAE021990EB90076C54B /* LaunchScreen.storyboard in Resources */,
 				DD26866B219A6FE600F1B653 /* refresh.json in Resources */,
+				DDA921FA219AB2A500D44A9F /* Localizable.strings in Resources */,
 				BBE2DADD21990EB90076C54B /* Assets.xcassets in Resources */,
 				BBE2DADB21990EB80076C54B /* Main.storyboard in Resources */,
 				DD26866A219A6FE600F1B653 /* refresh_white.json in Resources */,
@@ -789,6 +828,7 @@
 				DD268640219A6FE600F1B653 /* XHBaseTabBtn.m in Sources */,
 				DD26865D219A6FE600F1B653 /* NSURL+QueryDictionary.m in Sources */,
 				DD26864D219A6FE600F1B653 /* XHRefreshHeader.m in Sources */,
+				DDA92200219AB4D700D44A9F /* LanguageSettingsViewController.m in Sources */,
 				DD268643219A6FE600F1B653 /* SettingTableViewCell.m in Sources */,
 				DD268665219A6FE600F1B653 /* XHThemeManager.m in Sources */,
 				DD26865B219A6FE600F1B653 /* UIButton+helper.m in Sources */,
@@ -796,10 +836,12 @@
 				DD268654219A6FE600F1B653 /* XHCommonHelper.m in Sources */,
 				DD26865A219A6FE600F1B653 /* UIView+helper.m in Sources */,
 				DD268639219A6FE600F1B653 /* XHBaseListViewController.m in Sources */,
+				DDA921F4219AA6F000D44A9F /* XHLanguagesManager.m in Sources */,
 				DD268660219A6FE600F1B653 /* TYPageControl.m in Sources */,
 				DD26863A219A6FE600F1B653 /* XHBaseNavigationController.m in Sources */,
 				DD268668219A6FE600F1B653 /* UserService.m in Sources */,
 				DD26863C219A6FE600F1B653 /* XHButton.m in Sources */,
+				DDA921F7219AACB400D44A9F /* NSBundle+XHLanguages.m in Sources */,
 				DD26863D219A6FE600F1B653 /* XHBaseNavView.m in Sources */,
 				DD268655219A6FE600F1B653 /* NSDate+helper.m in Sources */,
 				DD26866F219A6FE600F1B653 /* XHPopupView.m in Sources */,
@@ -873,6 +915,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		DDA921FC219AB2A500D44A9F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA921FB219AB2A500D44A9F /* en */,
+				DDA921FD219AB41E00D44A9F /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -880,6 +931,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -939,6 +991,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -995,6 +1048,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CODE_SIGN_ENTITLEMENTS = xhFrames/xhFrames.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PFS3AG5754;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Headers/PrefixHeader.pch";
@@ -1017,6 +1071,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CODE_SIGN_ENTITLEMENTS = xhFrames/xhFrames.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PFS3AG5754;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Headers/PrefixHeader.pch";

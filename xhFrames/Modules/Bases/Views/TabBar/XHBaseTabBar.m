@@ -24,25 +24,18 @@
 
 @implementation XHBaseTabBar
 
+
+- (instancetype)initWithDelegate:(id<YWTabBarDelegate>)delegate{
+    self = [super init];
+    if (self) {
+        _myDelegate = delegate;
+    }
+    return self;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.sakura.backgroundColor(kThemeKey_BGC01);
-        self.bgView = [[UIView alloc] initWithFrame:self.bounds];
-//        self.bgView.sakura.backgroundColor(kThemeKey_BGC01);
-//        self.bgView.layer.sakura.shadowColor(kThemeKey_BGCShadow);//设置阴影的颜色
-//        self.bgView.layer.shadowOpacity = 0.2;//设置阴影的透明度
-//        self.bgView.layer.shadowOffset = CGSizeMake(0, -4);//设置阴影的偏移量
-        [self addSubview:self.bgView];
-        
-//        UIImageView *shadowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -7*kScale, SCREEN_WIDTH, 7*kScale)];
-//        shadowImageView.sakura.image(kThemeKey_IMG_TabbarShadow);
-//        [self addSubview:shadowImageView];
-        
-        self.lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 1)];
-        self.lineView.sakura.backgroundColor(kThemeKey_BGCLine);
-        self.lineView.alpha = 0.8;
-        [self addSubview:self.lineView];
         
         [self initSubViews];
         
@@ -62,6 +55,20 @@
 }
 
 - (void)initSubViews{
+    self.sakura.backgroundColor(kThemeKey_BGC01);
+    
+    if (!self.bgView) {
+        self.bgView = [[UIView alloc] initWithFrame:self.bounds];
+        [self addSubview:self.bgView];
+    }
+    
+    if (!self.lineView) {
+        self.lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 1)];
+        self.lineView.sakura.backgroundColor(kThemeKey_BGCLine);
+        self.lineView.alpha = 0.8;
+        [self addSubview:self.lineView];
+    }
+    
     [self.bgView removeAllSubviews];
     
     CGFloat dif = self.height - 49;

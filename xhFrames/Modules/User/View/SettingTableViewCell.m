@@ -76,9 +76,9 @@
     NSString *rightTitle = [model objectForKey:@"rightTitle"];
     NSString *centerTitle = [model objectForKey:@"centerTitle"];
     
-    self.leftLab.text = leftTitle;
-    self.rightLab.text = rightTitle;
-    self.centerLab.text = centerTitle;
+    self.leftLab.text = NSLocalizedString(leftTitle, nil);
+    self.rightLab.text = NSLocalizedString(rightTitle, nil);
+    self.centerLab.text = NSLocalizedString(centerTitle, nil);
     
     BOOL hideRight = [[model objectForKey:@"hideRight"] boolValue];
     self.rightImgView.hidden = hideRight;

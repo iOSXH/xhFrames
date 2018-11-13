@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  xhFrames
+
+  Created by hui xiang on 2018/11/13.
+  Copyright © 2018 xianghui. All rights reserved.
+*/
+
+
+"我的" = "mine";
+"清除缓存" = "clear caches";
+"声明条款" = "agreement";
+"多语言" = "languages";
+"版本" = "version";
+"退出登录" = "logout";
