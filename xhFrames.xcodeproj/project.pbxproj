@@ -563,7 +563,6 @@
 			children = (
 				DD268621219A6FE600F1B653 /* Lotties */,
 				DD268625219A6FE600F1B653 /* Fonts */,
-				DDA921FC219AB2A500D44A9F /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -616,6 +615,7 @@
 		DDA921F1219AA6DD00D44A9F /* Languages */ = {
 			isa = PBXGroup;
 			children = (
+				DDA921FC219AB2A500D44A9F /* Localizable.strings */,
 				DDA921F2219AA6F000D44A9F /* XHLanguagesManager.h */,
 				DDA921F3219AA6F000D44A9F /* XHLanguagesManager.m */,
 				DDA921F5219AACB400D44A9F /* NSBundle+XHLanguages.h */,

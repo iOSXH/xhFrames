@@ -71,6 +71,11 @@ static inline CGFloat sizeScale(CGFloat size, BOOL adjustIpad){
     return size;
 }
 
+static inline UIFont* systemFontScale(CGFloat size, BOOL adjustIpad){
+    UIFont *font = [UIFont systemFontOfSize:sizeScale(size, YES)];
+    return font;
+}
+
 
 static inline BOOL emptyString(NSString *str){
     if (!str) {
