@@ -38,8 +38,8 @@ def xh_pods
     pod 'UMCSecurityPlugins'
 
     pod 'UMCAnalytics'
-#    pod 'UMCPush'
-#    pod 'UMCShare/Social/WeChat'
+    pod 'UMCPush'
+    pod 'UMCShare/Social/WeChat'
 	
     pod 'Bugly'
   

@@ -108,13 +108,11 @@ static const DDLogLevel ddLogLevel = DDLogLevelOff;
 static const int kDefaultMargin = 7;
 
 
-static const int kSelfIntroMaxLength = 140; ///< 个性说最大长度
-
 #pragma mark - 字符串常量
 
 static NSString *const Font_TimesNewRoman = @"Times New Roman";
 
-static NSString * const kApi_Base_Url = @"https://sentiment-miniapp.xianghui.com"; ///< 生产环境
+static NSString * const kApi_Base_Url = @"https://sentiment-miniapp.tigerobo.com"; ///< 生产环境
 static NSString * const kApi_Base_Url_Dev = @"http://10.0.3.33:8080";       ///< 测试环境
 
 static NSString * const kUMAPPKEY = @"5bd191ceb465f5d19200008d";            ///< 友盟APPKEY
@@ -144,17 +142,15 @@ static NSString * const kImageDefaultCover = @"icon_user_coverDefault";         
 
 #pragma mark - 枚举
 typedef enum{
-    TSUserSex_undefine = 0,
-    TSUserSex_Man,
-    TSUserSex_Woman
-}TSUserSex;
+    UserSex_undefine = 0,
+    UserSex_Man,
+    UserSex_Woman
+}UserSex;
 
 #pragma mark - 通知中心keys
-static NSString * const kRoomSessionStateChangedNotification = @"kRoomSessionStateChangedNotification";
+static NSString * const kNotification = @"kNotification";
 
 
-#pragma mark - 友盟统计keys
-static NSString * const kUMEOpenRoom = @"OpenRoom";
 
 
 #endif /* XHCommonHeader_h */

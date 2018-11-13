@@ -11,7 +11,7 @@
 
 
 #warning config change App Store
-#define DebugMode 0 // 1 测试 0 App Store
+#define DebugMode 1 // 1 测试 0 App Store
 #define DevelopMode 0 // 1 测试环境 0 线上环境 [[NSUserDefaults standardUserDefaults] boolForKey:kWWUserDefaultsIsDevModeKey] //
 
 

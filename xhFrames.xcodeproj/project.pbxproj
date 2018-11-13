@@ -263,8 +263,8 @@
 		BBE2DAD221990EB80076C54B /* xhFrames */ = {
 			isa = PBXGroup;
 			children = (
-				DD268627219A6FE600F1B653 /* Components */,
 				DD268609219A6FE600F1B653 /* Headers */,
+				DD268627219A6FE600F1B653 /* Components */,
 				DD2685E2219A6FE600F1B653 /* Helpers */,
 				DD2685FE219A6FE600F1B653 /* Libs */,
 				DD26860C219A6FE600F1B653 /* Managers */,
@@ -306,6 +306,7 @@
 		DD268590219A6FE500F1B653 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DD268674219A778200F1B653 /* Tests */,
 				DD26859D219A6FE500F1B653 /* Bases */,
 				DD2685B6219A6FE500F1B653 /* User */,
 				DD2685CE219A6FE500F1B653 /* Main */,
@@ -361,9 +362,9 @@
 		DD2685B6219A6FE500F1B653 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				DD2685BB219A6FE500F1B653 /* Login */,
 				DD2685BE219A6FE500F1B653 /* MineViewController.h */,
 				DD2685B7219A6FE500F1B653 /* MineViewController.m */,
+				DD2685BB219A6FE500F1B653 /* Login */,
 				DD2685B8219A6FE500F1B653 /* View */,
 			);
 			path = User;
@@ -585,6 +586,13 @@
 				DD268630219A6FE600F1B653 /* UserModel.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DD268674219A778200F1B653 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

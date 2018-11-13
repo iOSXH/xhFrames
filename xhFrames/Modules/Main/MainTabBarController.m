@@ -37,20 +37,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:kAPPHomeTabDidSelectNotificationKey object:nil];
     
     
-//    [self.myTabBar setSelectedIndex:1];
-    
-    
     [[AccountManager sharedManager] setAppConfigBlock:^{
-        if (![AccountManager appReview]) {
-            if ([AccountManager sharedManager].loginState != LoginState_In) {
-                [self gotoLoginAnimated:YES];
-            }else{
-//                [self.myTabBar setSelectedIndex:0];
-            }
+        if ([AccountManager sharedManager].loginState != LoginState_In) {
+            [self gotoLoginAnimated:YES];
         }else{
-            if ([AccountManager sharedManager].loginState == LoginState_In) {
-//                [self.myTabBar setSelectedIndex:0];
-            }
+            
         }
     }];
 }

@@ -72,18 +72,7 @@
     }
     
     
-    NSMutableArray *tabConfigs = [NSMutableArray arrayWithArray:@[@{@"imageNor":@"icon_tab_collect_unselected",
-                                                                    @"imageSel":@"icon_tab_collect_selected",
-                                                                    @"titleColrNor":@"#ACB5BF",
-                                                                    @"titleColrSel":@"#333333",
-                                                                    @"title":@"订阅"
-                                                                    },
-                                                                  @{@"imageNor":@"icon_tab_event_unselected",
-                                                                    @"imageSel":@"icon_tab_event_selected",
-                                                                    @"titleColrNor":@"#ACB5BF",
-                                                                    @"titleColrSel":@"#333333",
-                                                                    @"title":@"事件"
-                                                                    },
+    NSMutableArray *tabConfigs = [NSMutableArray arrayWithArray:@[
                                                                   @{@"imageNor":@"icon_tab_mine_unselected",
                                                                     @"imageSel":@"icon_tab_mine_selected",
                                                                     @"titleColrNor":@"#ACB5BF",

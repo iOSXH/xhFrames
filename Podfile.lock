@@ -52,7 +52,18 @@ PODS:
   - UMCAnalytics (5.5.1):
     - UMCCommon
   - UMCCommon (1.5.2)
+  - UMCPush (3.2.3):
+    - UMCCommon
   - UMCSecurityPlugins (1.0.6)
+  - UMCShare/Core (6.9.5):
+    - UMCCommon
+  - UMCShare/Social/ReducedWeChat (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/WeChat (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedWeChat
   - WebViewJavascriptBridge (6.0.3)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
@@ -76,7 +87,9 @@ DEPENDENCIES:
   - UICKeyChainStore
   - UMCAnalytics
   - UMCCommon
+  - UMCPush
   - UMCSecurityPlugins
+  - UMCShare/Social/WeChat
   - WebViewJavascriptBridge (~> 6.0)
   - YTKNetwork
   - YYKit
@@ -99,7 +112,9 @@ SPEC REPOS:
     - UICKeyChainStore
     - UMCAnalytics
     - UMCCommon
+    - UMCPush
     - UMCSecurityPlugins
+    - UMCShare
     - WebViewJavascriptBridge
     - YTKNetwork
     - YYKit
@@ -121,11 +136,13 @@ SPEC CHECKSUMS:
   UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
   UMCAnalytics: 0aff87e39008e2a650e5917430db0da2de2f8495
   UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
+  UMCPush: 628b5c61be5a5036cb31eb9b3a3ab8dce7521691
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
+  UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 60ea49ab30522f12ec3e7248fa05e527f658fe59
+PODFILE CHECKSUM: e806d7afc5ad9003b5d836d666905402117726ce
 
 COCOAPODS: 1.5.3
