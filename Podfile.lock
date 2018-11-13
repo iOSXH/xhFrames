@@ -1,0 +1,131 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - Bugly (2.5.0)
+  - CocoaLumberjack (3.4.2):
+    - CocoaLumberjack/Default (= 3.4.2)
+    - CocoaLumberjack/Extensions (= 3.4.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Extensions (3.4.2):
+    - CocoaLumberjack/Default
+  - DZNEmptyDataSet (1.8.1)
+  - KMNavigationBarTransition (1.1.5)
+  - lottie-ios (2.5.2)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.1.15.7)
+  - PureLayout (3.1.2)
+  - SakuraKit (1.0.0):
+    - SSZipArchive
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SSZipArchive (2.1.4)
+  - UICKeyChainStore (2.1.2)
+  - UMCAnalytics (5.5.1):
+    - UMCCommon
+  - UMCCommon (1.5.2)
+  - UMCSecurityPlugins (1.0.6)
+  - WebViewJavascriptBridge (6.0.3)
+  - YTKNetwork (2.0.4):
+    - AFNetworking (~> 3.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking
+  - BlocksKit
+  - Bugly
+  - CocoaLumberjack
+  - DZNEmptyDataSet
+  - KMNavigationBarTransition
+  - lottie-ios
+  - MBProgressHUD (~> 1.1.0)
+  - MJRefresh
+  - PureLayout
+  - SakuraKit
+  - SDWebImage (~> 3.7)
+  - UICKeyChainStore
+  - UMCAnalytics
+  - UMCCommon
+  - UMCSecurityPlugins
+  - WebViewJavascriptBridge (~> 6.0)
+  - YTKNetwork
+  - YYKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - BlocksKit
+    - Bugly
+    - CocoaLumberjack
+    - DZNEmptyDataSet
+    - KMNavigationBarTransition
+    - lottie-ios
+    - MBProgressHUD
+    - MJRefresh
+    - PureLayout
+    - SakuraKit
+    - SDWebImage
+    - SSZipArchive
+    - UICKeyChainStore
+    - UMCAnalytics
+    - UMCCommon
+    - UMCSecurityPlugins
+    - WebViewJavascriptBridge
+    - YTKNetwork
+    - YYKit
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  KMNavigationBarTransition: 7a52c9bc25b39b6e3343e980b453facee1591b82
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  PureLayout: 4634d0b61e3b5021166e8ec7c18e9e0ca0720c8b
+  SakuraKit: 9ca56ebff8ad0fd8f61af7a340e2c27d691c554a
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
+  UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
+  UMCAnalytics: 0aff87e39008e2a650e5917430db0da2de2f8495
+  UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 60ea49ab30522f12ec3e7248fa05e527f658fe59
+
+COCOAPODS: 1.5.3
