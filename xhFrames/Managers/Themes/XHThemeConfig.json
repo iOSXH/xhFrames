@@ -1,0 +1,52 @@
+{
+    "Global": {
+        "navBarTitle":{
+            "NSForegroundColorAttributeName" : "#000000",
+            "NSFontAttributeName_Bold" : 20
+        },
+        "navBarTitleWhite":{
+            "NSForegroundColorAttributeName" : "#FFFFFF",
+            "NSFontAttributeName_Bold" : 20
+        },
+        "navBarItem":{
+            "NSForegroundColorAttributeName" : "#000000",
+            "NSFontAttributeName" : 16
+        }
+    },
+    "BgColor": {
+        "LineColor":"#EAEAEA",
+        "ShadowColor":"#000000",
+        
+        "FirstColor":"#FFFFFF",
+        "SecondColor":"#FFA61E",
+        "ThirdColor":"#F6F6F6",
+        "FourthColor":"#000000",
+        "FifthColor":"#ECEAE7",
+        "SixthColor":"#F1F2F5",
+        "SevenColor":"#C13333",
+        "EightColor":"#478E4E",
+        "NineColor":"#D9AA77",
+        "TenColor":"#F85B5B",
+        "ElevenColor":"#FFF7EA",
+        "TwelveColor":"#EAEAEA",
+        "ThirteenColor":"#EDE0CD",
+        "FourteenColor":"#D6860C"
+    },
+    "TextColor":{
+        "FirstColor":"#FFFFFF",
+        "SecondColor":"#FFA61E",
+        "ThirdColor":"#000000",
+        "FourthColor":"#666666",
+        "FifthColor":"#ABABAB",
+        "SixthColor":"#333333",
+        "SevenColor":"#999999",
+        "EightColor":"#486FA4"
+    },
+    "Images":{
+        "AppCopyright" : "icon_copyRight"
+    },
+    "Files":{
+        "RefreshHeader":"refreshHeader"
+    }
+    
+}

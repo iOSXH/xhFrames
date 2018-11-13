@@ -6,6 +6,9 @@
 //  Copyright © 2018 xianghui. All rights reserved.
 //
 
+
+#define UIAppDelegate (AppDelegate *)[[UIApplication sharedApplication] delegate]
+
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

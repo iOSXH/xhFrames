@@ -1,0 +1,54 @@
+//
+//  PrefixHeader.pch
+//  xianghui
+//
+//  Created by xianghui on 2018/8/13.
+//  Copyright © 2018年 xh. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#warning config change App Store
+#define DebugMode 0 // 1 测试 0 App Store
+#define DevelopMode 0 // 1 测试环境 0 线上环境 [[NSUserDefaults standardUserDefaults] boolForKey:kWWUserDefaultsIsDevModeKey] //
+
+
+
+#import <AFNetworking/AFNetworking.h>
+#import <YTKNetwork.h>
+#import <PureLayout.h>
+#import <BlocksKit.h>
+#import <BlocksKit+UIKit.h>
+#import <CocoaLumberjack.h>
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import <KMNavigationBarTransition/KMNavigationBarTransition.h>
+#import <MJRefresh/MJRefresh.h>
+#import <SakuraKit/TXSakura.h>
+#import <YYKit/YYKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <MBProgressHUD.h>
+
+#import "XHCommonHeader.h"
+
+#import "XHThemeManager.h"
+
+#import "NSString+helper.h"
+#import "NSURL+helper.h"
+#import "UIView+helper.h"
+
+#import "XHCommonHelper.h"
+#import "AppTrackHelper.h"
+
+#import "AccountManager.h"
+
+#import "URLRouter.h"
+
+#import "UserService.h"
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
