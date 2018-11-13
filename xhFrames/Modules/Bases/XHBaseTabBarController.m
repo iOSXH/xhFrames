@@ -28,6 +28,10 @@
     [self setValue:self.myTabBar forKey:@"tabBar"];
 }
 
+- (void)dealloc{
+    DDLogDebug(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 - (UIViewController *)childViewControllerForStatusBarStyle{
     return self.selectedViewController;
 }

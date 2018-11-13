@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "XHLanguagesManager.h"
-
 #import "MainTabBarController.h"
 
 #import <UMCommon/UMCommon.h>
@@ -17,7 +15,7 @@
 #import <UMPush/UMessage.h>
 #import <Bugly/Bugly.h>
 
-@interface AppDelegate ()<UNUserNotificationCenterDelegate, XHLanguagesDelegate>
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
 
@@ -30,8 +28,6 @@
     
     [[XHThemeManager sharedManager] registerDefaultTheme];
     
-    [[XHLanguagesManager sharedManager] setDelegate:self];
-    
     MainTabBarController *tab = [[MainTabBarController alloc] init];
     self.window.rootViewController = tab;
     [self.window makeKeyAndVisible];
@@ -42,12 +38,7 @@
 }
 
 
-#pragma mark XHLanguagesDelegate
-- (void)languagesDidChanged:(XHLanguagesType)type{
-    
-    MainTabBarController *tab = [[MainTabBarController alloc] init];
-    self.window.rootViewController = tab;
-}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -396,8 +396,8 @@
 		DD2685BB219A6FE500F1B653 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				DD2685BC219A6FE500F1B653 /* LoginViewController.m */,
 				DD2685BD219A6FE500F1B653 /* LoginViewController.h */,
+				DD2685BC219A6FE500F1B653 /* LoginViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";

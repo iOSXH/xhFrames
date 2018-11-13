@@ -11,6 +11,7 @@
 #import "MineViewController.h"
 #import "LoginViewController.h"
 
+
 @interface MainTabBarController ()
 
 @end
@@ -23,10 +24,10 @@
     
     [[AccountManager sharedManager] initLoginState];
     
-    
     MineViewController *mineVc = [[MineViewController alloc] init];
     XHBaseNavigationController *mineNav = [[XHBaseNavigationController alloc] initWithRootViewController:mineVc];
     mineVc.tabBarItem.title = @"";
+    
     
     [self setViewControllers:@[mineNav]];
     
@@ -37,13 +38,15 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:kAPPHomeTabDidSelectNotificationKey object:nil];
     
     
-    [[AccountManager sharedManager] setAppConfigBlock:^{
-        if ([AccountManager sharedManager].loginState != LoginState_In) {
-            [self gotoLoginAnimated:YES];
-        }else{
-            
-        }
-    }];
+    
+    
+//    [[AccountManager sharedManager] setAppConfigBlock:^{
+//        if ([AccountManager sharedManager].loginState != LoginState_In) {
+//            [self gotoLoginAnimated:YES];
+//        }else{
+//
+//        }
+//    }];
 }
 
 - (void)dealloc{

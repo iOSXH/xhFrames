@@ -51,6 +51,7 @@
     // Do any additional setup after loading the view.
     
 //    self.title = @"登录";
+    self.view.sakura.backgroundColor(kThemeKey_BGC06);
     [self addBarItemWithTitle:nil imageName:@"icon_nav_close" isLeft:YES];
     
     [[YYTextKeyboardManager defaultManager] addObserver:self];

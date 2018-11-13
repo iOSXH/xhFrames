@@ -10,5 +10,7 @@
 
 @interface MainTabBarController : XHBaseTabBarController
 
+@property (nonatomic, assign) BOOL languageChanged;
+
 @end
 

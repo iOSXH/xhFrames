@@ -105,6 +105,10 @@ IMPLEMENT_SINGLETON(AccountManager, sharedManager);
 }
 
 - (void)initLoginState{
+    if (self.loginState != LoginState_Unknow) {
+        return;
+    }
+    
     NSInteger lastLoginUid = self.lastLoginUid;
     if (lastLoginUid > 0) {
         

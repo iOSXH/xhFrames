@@ -11,7 +11,10 @@
 
 #import "XHLanguagesManager.h"
 
-@interface LanguageSettingsViewController ()
+#import "MainTabBarController.h"
+#import "AppDelegate.h"
+
+@interface LanguageSettingsViewController ()<XHLanguagesDelegate>
 
 @end
 
@@ -40,12 +43,29 @@
     // Do any additional setup after loading the view.
     self.title = NSLocalizedString(@"多语言", nil);
     self.view.sakura.backgroundColor(kThemeKey_BGC06);
-    self.appearRefresh = YES;
     [self setupRefresh];
+    
+    [[XHLanguagesManager sharedManager] setDelegate:self];
     
     [self startRefreshing:NO];
 }
 
+
+#pragma mark XHLanguagesDelegate
+- (void)languagesDidChanged:(XHLanguagesType)type{
+    
+    MainTabBarController *tab = [[MainTabBarController alloc] init];
+    
+//    UINavigationController *mineNav = [tab.viewControllers lastObject];
+//    
+//    LanguageSettingsViewController *languageVc = [[LanguageSettingsViewController alloc] init];
+//    languageVc.hidesBottomBarWhenPushed = YES;
+//    NSMutableArray *vcs = [NSMutableArray arrayWithArray:mineNav.viewControllers];
+//    [vcs addObject:languageVc];
+//    [mineNav setViewControllers:vcs animated:YES];
+    
+    [UIAppDelegate window].rootViewController = tab;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
