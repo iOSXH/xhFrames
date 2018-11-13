@@ -92,6 +92,7 @@
     if (appearingViewController.km_transitionNavigationBar) {
         UINavigationBar *appearingNavigationBar = appearingViewController.km_transitionNavigationBar;
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
+        self.navigationBar.titleTextAttributes = appearingNavigationBar.titleTextAttributes;
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
@@ -110,6 +111,7 @@
     if (viewController.km_transitionNavigationBar) {
         UINavigationBar *appearingNavigationBar = viewController.km_transitionNavigationBar;
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
+        self.navigationBar.titleTextAttributes = appearingNavigationBar.titleTextAttributes;
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }
@@ -129,6 +131,7 @@
     if (rootViewController.km_transitionNavigationBar) {
         UINavigationBar *appearingNavigationBar = rootViewController.km_transitionNavigationBar;
         self.navigationBar.barTintColor = appearingNavigationBar.barTintColor;
+        self.navigationBar.titleTextAttributes = appearingNavigationBar.titleTextAttributes;
         [self.navigationBar setBackgroundImage:[appearingNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.shadowImage = appearingNavigationBar.shadowImage;
     }

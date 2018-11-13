@@ -77,7 +77,7 @@ DEPENDENCIES:
   - Bugly
   - CocoaLumberjack
   - DZNEmptyDataSet
-  - KMNavigationBarTransition
+  - KMNavigationBarTransition (from `https://github.com/iOSXH/KMNavigationBarTransition.git`)
   - lottie-ios
   - MBProgressHUD (~> 1.1.0)
   - MJRefresh
@@ -101,7 +101,6 @@ SPEC REPOS:
     - Bugly
     - CocoaLumberjack
     - DZNEmptyDataSet
-    - KMNavigationBarTransition
     - lottie-ios
     - MBProgressHUD
     - MJRefresh
@@ -118,6 +117,15 @@ SPEC REPOS:
     - WebViewJavascriptBridge
     - YTKNetwork
     - YYKit
+
+EXTERNAL SOURCES:
+  KMNavigationBarTransition:
+    :git: https://github.com/iOSXH/KMNavigationBarTransition.git
+
+CHECKOUT OPTIONS:
+  KMNavigationBarTransition:
+    :commit: be47b16bfbec436f25ee431de5bd78be48e65489
+    :git: https://github.com/iOSXH/KMNavigationBarTransition.git
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -143,6 +151,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: e806d7afc5ad9003b5d836d666905402117726ce
+PODFILE CHECKSUM: 4fdc198e6800f3720007ad19841ee69f6159f471
 
 COCOAPODS: 1.5.3

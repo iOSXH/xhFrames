@@ -24,7 +24,7 @@ def common_pods
 
     pod 'WebViewJavascriptBridge', '~> 6.0'
     pod 'MJRefresh'
-    pod 'KMNavigationBarTransition'
+    pod 'KMNavigationBarTransition', :git => 'https://github.com/iOSXH/KMNavigationBarTransition.git'
 
     pod 'SakuraKit'
     
