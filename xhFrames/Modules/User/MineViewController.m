@@ -22,8 +22,12 @@
 @implementation MineViewController
 
 - (NSString *)navBgThemeColorKey{
-    return nil;
+    return kThemeKey_BGC02;
 }
+
+//- (BOOL)navBarHidden{
+//    return YES;
+//}
 
 - (UITableViewStyle)tableViewStyle{
     return UITableViewStyleGrouped;
@@ -37,6 +41,9 @@
     return [SettingTableViewCell class];
 }
 
+//- (UIEdgeInsets)contentInsets{
+//    return UIEdgeInsetsMake(-kStatusBarHeight, 0, 0, 0);
+//}
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
@@ -53,16 +60,22 @@
     [self startRefreshing:NO];
 }
 
+    
 - (void)setupHeader{
     
-    self.tableView.showsVerticalScrollIndicator = NO;
-    if (@available(iOS 11.0, *)) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }else{
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
+//    self.tableView.showsVerticalScrollIndicator = NO;
+//    if (@available(iOS 11.0, *)) {
+//        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    }else{
+//        self.automaticallyAdjustsScrollViewInsets = NO;
+//    }
+    
+//    self.edgesForExtendedLayout = UIRectEdgeTop;
+//    self.extendedLayoutIncludesOpaqueBars = NO;
+//    self.automaticallyAdjustsScrollViewInsets = NO;
     
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, IS_IPHONE_X?141:117)];
+    bgView.sakura.backgroundColor(kThemeKey_BGC02);
     
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:bgView.bounds];
     imgView.image = IS_IPHONE_X?kImageNamed(@"icon_mine_top_bgx"):kImageNamed(@"icon_mine_top_bg");

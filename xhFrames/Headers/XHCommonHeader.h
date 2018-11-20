@@ -21,8 +21,8 @@
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
-//判断是否为iPhoneX及以上机型
-#define IS_GREATER_IPHONEX ([[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom > 0.0)
+//判断是否为iPhoneX及以上机型 ios11
+//#define IS_GREATER_IPHONEX ([[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom > 0.0)
 
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue] //系统版本-float
 
@@ -36,6 +36,7 @@
 #define kNavigationBarNormalHeight (44)
 #define kNavigationBarHeight (kNavigationBarNormalHeight + kStatusBarHeight)
 #define kBottomSafeAreaHeight (IS_IPHONE_X?34:0)
+//#define kSafeAreaBottomHeight ([[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom)
 #define kTabBarNormalHeight (49)
 #define kTabBarHeight (kTabBarNormalHeight+kBottomSafeAreaHeight)
 
@@ -47,6 +48,8 @@
 #define kIPadScale (IS_IPAD?1:kScale)
 
 
+#define kMinScale (SCREEN_MIN_LENGTH/375.0)
+#define kIPadMinScale (IS_IPAD?1:kMinScale)
 
 
 #pragma mark - 单例
@@ -67,7 +70,7 @@ return method_name;\
 
 #pragma mark - 静态方法
 static inline CGFloat sizeScale(CGFloat size, BOOL adjustIpad){
-    size = size * (adjustIpad?kIPadScale:kScale);
+    size = size * (adjustIpad?kIPadMinScale:kMinScale);
     return size;
 }
 

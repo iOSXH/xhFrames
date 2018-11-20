@@ -27,12 +27,12 @@
     
     
     [[XHThemeManager sharedManager] registerDefaultTheme];
-    
+
     MainTabBarController *tab = [[MainTabBarController alloc] init];
     self.window.rootViewController = tab;
     [self.window makeKeyAndVisible];
-    
-    
+
+
     [self initThirdPartConfig:launchOptions];
     return YES;
 }

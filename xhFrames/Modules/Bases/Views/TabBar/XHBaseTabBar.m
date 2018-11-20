@@ -18,6 +18,9 @@
 @property (nonatomic, strong) UIView *lineView;
 
 
+@property (nonatomic, assign) CGRect tabFrame;
+
+
 @end
 
 
@@ -47,11 +50,17 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
+    
+//    if (!CGRectEqualToRect(self.tabFrame, self.bounds)) {
+//        [self initSubViews];
+//    }
+    
     self.bgView.frame = self.bounds;
     [self bringSubviewToFront:self.bgView];
     
     self.lineView.frame = CGRectMake(0, 0, self.bounds.size.width, 1);
     [self bringSubviewToFront:self.lineView];
+    
 }
 
 - (void)initSubViews{
@@ -109,6 +118,7 @@
     
     NSMutableArray *btns = [[NSMutableArray alloc] init];
     
+    UIView *lastView = nil;
     CGFloat startX = sideSpace;
     for (NSInteger i = 0; i < tabConfigs.count; i++) {
         NSDictionary *config = [tabConfigs objectOrNilAtIndex:i];
@@ -117,7 +127,18 @@
         [btn addTarget:self action:@selector(tabBtnDidClicked:) forControlEvents:UIControlEventTouchUpInside];
         [btn addTarget:self action:@selector(tabBtnDidDoubelClicked:) forControlEvents:UIControlEventTouchDownRepeat];
         btn.tag = 10+i;
+        [btn configureForAutoLayout];
         [self.bgView addSubview:btn];
+        [btn autoSetDimension:ALDimensionHeight toSize:height];
+        [btn autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.bgView withMultiplier:1.0/tabConfigs.count];
+        [btn autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        if (lastView) {
+            [btn autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:lastView];
+        }else{
+            [btn autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        }
+        
+        lastView = btn;
         
         [btns addObject:btn];
         if (i == self.selectedIndex) {
@@ -128,6 +149,8 @@
         startX += (width+space);
     }
     self.tabButtons = btns;
+    
+    self.tabFrame = self.bounds;
 }
 
 
