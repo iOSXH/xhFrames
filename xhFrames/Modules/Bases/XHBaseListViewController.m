@@ -28,7 +28,6 @@
     // Do any additional setup after loading the view.
     
     
-    
     if (self.cellType == XHCellTypeTableCell) {
         self.contentView = self.tableView;
         
@@ -354,6 +353,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     XHBaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self.cellClass CellReuseIdentifier]];
     cell.baseDelegate = self;
     cell.indexPath = indexPath;

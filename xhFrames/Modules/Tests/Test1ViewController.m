@@ -19,9 +19,9 @@
     NSString *key = kThemeKey_BGC01;
     switch (self.type) {
         case 1:
-            {
-                key = kThemeKey_BGC02;
-            }
+        {
+            key = kThemeKey_BGC02;
+        }
             break;
         case 2:
         {

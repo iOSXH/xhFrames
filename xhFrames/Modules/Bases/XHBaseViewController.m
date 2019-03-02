@@ -80,6 +80,11 @@
         [AppTrackHelper beginLogPageView:NSStringFromClass([self class])];
     }
     
+    if (self.ViewFirstAppearBlock) {
+        self.ViewFirstAppearBlock();
+        self.ViewFirstAppearBlock = nil;
+    }
+    
 }
 - (void)viewWillDisappear:(BOOL)animated
 {

@@ -23,6 +23,10 @@
 @property (nonatomic, assign) BOOL disableUMPageLog; ///< 禁止友盟页面统计
 
 
+/// 页面第一次调用didAppear时回调
+@property(nonatomic, copy) void (^ViewFirstAppearBlock)();
+
+
 /**
  设置导航栏左右按钮
  
