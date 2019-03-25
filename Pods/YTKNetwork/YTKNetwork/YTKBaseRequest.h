@@ -75,6 +75,9 @@ typedef void (^AFURLSessionTaskProgressBlock)(NSProgress *);
 
 typedef void(^YTKRequestCompletionBlock)(__kindof YTKBaseRequest *request);
 
+
+typedef void(^YTKRequestProgressBlock)(NSProgress *progress);
+
 ///  The YTKRequestDelegate protocol defines several optional methods you can use
 ///  to receive network-related messages. All the delegate methods will be called
 ///  on the main queue.
@@ -191,6 +194,8 @@ typedef void(^YTKRequestCompletionBlock)(__kindof YTKBaseRequest *request);
 ///  The delegate object of the request. If you choose block style callback you can ignore this.
 ///  Default is nil.
 @property (nonatomic, weak, nullable) id<YTKRequestDelegate> delegate;
+
+@property (nonatomic, copy, nullable) YTKRequestProgressBlock progressBlock;
 
 ///  The success callback. Note if this value is not nil and `requestFinished` delegate method is
 ///  also implemented, both will be executed but delegate method is first called. This block

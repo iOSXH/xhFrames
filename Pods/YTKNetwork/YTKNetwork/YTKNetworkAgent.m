@@ -294,6 +294,27 @@
     return YES;
 }
 
+- (void)handleRequestResult:(NSURLSessionTask *)task progress:(NSProgress *)progress{
+    Lock();
+    YTKBaseRequest *request = _requestsRecord[@(task.taskIdentifier)];
+    Unlock();
+    
+    // When the request is cancelled and removed from records, the underlying
+    // AFNetworking failure callback will still kicks in, resulting in a nil `request`.
+    //
+    // Here we choose to completely ignore cancelled tasks. Neither success or failure
+    // callback will be called.
+    if (!request) {
+        return;
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (request.progressBlock) {
+            request.progressBlock(progress);
+        }
+    });
+}
+
 - (void)handleRequestResult:(NSURLSessionTask *)task responseObject:(id)responseObject error:(NSError *)error {
     Lock();
     YTKBaseRequest *request = _requestsRecord[@(task.taskIdentifier)];
@@ -453,10 +474,16 @@
     }
 
     __block NSURLSessionDataTask *dataTask = nil;
-    dataTask = [_manager dataTaskWithRequest:request
-                           completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *_error) {
-                               [self handleRequestResult:dataTask responseObject:responseObject error:_error];
-                           }];
+//    dataTask = [_manager dataTaskWithRequest:request
+//                           completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *_error) {
+//                               [self handleRequestResult:dataTask responseObject:responseObject error:_error];
+//                           }];
+    
+    dataTask = [_manager dataTaskWithRequest:request uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
+        [self handleRequestResult:dataTask progress:uploadProgress];
+    } downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable _error) {
+        [self handleRequestResult:dataTask responseObject:responseObject error:_error];
+    }];
 
     return dataTask;
 }

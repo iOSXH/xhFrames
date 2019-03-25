@@ -178,14 +178,14 @@
         }
     }];
     
-//    [request setProgressBlock:^(NSProgress * _Nonnull progress) {
-//        if (DebugMode) {
-//            DDLogDebug(@"上传进度:%@", progress);
-//        }
-//        if (progressBlock) {
-//            progressBlock(progress.fractionCompleted);
-//        }
-//    }];
+    [request setProgressBlock:^(NSProgress * _Nonnull progress) {
+        if (DebugMode) {
+            DDLogDebug(@"上传进度:%@", progress);
+        }
+        if (progressBlock) {
+            progressBlock(progress.fractionCompleted);
+        }
+    }];
     
     return request;
 }
