@@ -6,11 +6,11 @@
 //  Copyright © 2018 xianghui. All rights reserved.
 //
 
-#import "XHBaseListViewController.h"
+#import "BaseListViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LanguageSettingsViewController : XHBaseListViewController
+@interface LanguageSettingsViewController : BaseListViewController
 
 @end
 

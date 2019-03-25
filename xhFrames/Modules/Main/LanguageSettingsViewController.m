@@ -9,12 +9,12 @@
 #import "LanguageSettingsViewController.h"
 #import "SettingTableViewCell.h"
 
-#import "XHLanguagesManager.h"
+#import "LanguagesManager.h"
 
 #import "MainTabBarController.h"
 #import "AppDelegate.h"
 
-@interface LanguageSettingsViewController ()<XHLanguagesDelegate>
+@interface LanguageSettingsViewController ()<LanguagesDelegate>
 
 @end
 
@@ -25,12 +25,12 @@
     return UITableViewStyleGrouped;
 }
 
-- (XHHeaderRefreshType)headerType{
-    return XHHeaderRefreshTypeNone;
+- (RefreshHeaderType)headerType{
+    return RefreshHeaderTypeNone;
 }
 
-- (XHFooterRefreshType)footerType{
-    return XHFooterRefreshTypeNone;
+- (RefreshFooterType)footerType{
+    return RefreshFooterTypeNone;
 }
 
 - (Class)cellClass{
@@ -45,14 +45,14 @@
     self.view.sakura.backgroundColor(kThemeKey_BGC06);
     [self setupRefresh];
     
-    [[XHLanguagesManager sharedManager] setDelegate:self];
+    [[LanguagesManager sharedManager] setDelegate:self];
     
     [self startRefreshing:NO];
 }
 
 
-#pragma mark XHLanguagesDelegate
-- (void)languagesDidChanged:(XHLanguagesType)type{
+#pragma mark LanguagesDelegate
+- (void)languagesDidChanged:(LanguagesType)type{
     
     MainTabBarController *tab = [[MainTabBarController alloc] init];
     
@@ -73,7 +73,7 @@
     NSDictionary *data = [self.datas objectAtIndex:indexPath.row];
     NSInteger type = [[data objectForKey:@"type"] integerValue];
     
-    [[XHLanguagesManager sharedManager] resetLanguage:type];
+    [[LanguagesManager sharedManager] resetLanguage:type];
 }
 
 
@@ -82,16 +82,16 @@
     
     NSArray *datas = @[
                        @{@"leftTitle":@"跟随系统",
-                         @"type":@(XHLanguagesType_System),
-                         @"hideRight":@(XHLanguagesType_System == [XHLanguagesManager sharedManager].currentLanguagesType)
+                         @"type":@(LanguagesType_System),
+                         @"hideRight":@(LanguagesType_System == [LanguagesManager sharedManager].currentLanguagesType)
                          },
                        @{@"leftTitle":@"简体中文",
-                         @"type":@(XHLanguagesType_SimpleChinese),
-                         @"hideRight":@(XHLanguagesType_SimpleChinese == [XHLanguagesManager sharedManager].currentLanguagesType)
+                         @"type":@(LanguagesType_SimpleChinese),
+                         @"hideRight":@(LanguagesType_SimpleChinese == [LanguagesManager sharedManager].currentLanguagesType)
                          },
                        @{@"leftTitle":@"English",
-                         @"type":@(XHLanguagesType_English),
-                         @"hideRight":@(XHLanguagesType_English == [XHLanguagesManager sharedManager].currentLanguagesType)
+                         @"type":@(LanguagesType_English),
+                         @"hideRight":@(LanguagesType_English == [LanguagesManager sharedManager].currentLanguagesType)
                          }];
     
     

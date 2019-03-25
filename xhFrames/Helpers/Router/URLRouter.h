@@ -69,9 +69,9 @@ DECLARE_SINGLETON(URLRouter, sharedRouter)
 + (void)routerUrlWithPath:(NSString *)path  fromNav:(UINavigationController *)nav;
 + (void)routerUrlWithPath:(NSString *)path params:(NSDictionary *)params fromNav:(UINavigationController *)nav;
 
-+ (void)routerUrlWithUrl:(NSURL *)url extra:(NSDictionary *)extra fromNav:(UINavigationController *)nav complete:(XHRouterCompleteBlock)completeBlock;
++ (void)routerUrlWithUrl:(NSURL *)url extra:(NSDictionary *)extra fromNav:(UINavigationController *)nav complete:(RouterCompleteBlock)completeBlock;
 
-- (void)routerUrlWithUrl:(NSURL *)url extra:(NSDictionary *)extra options:(XHRouterOption)options fromNav:(UINavigationController *)nav complete:(XHRouterCompleteBlock)completeBlock;
+- (void)routerUrlWithUrl:(NSURL *)url extra:(NSDictionary *)extra options:(RouterOption)options fromNav:(UINavigationController *)nav complete:(RouterCompleteBlock)completeBlock;
 
 
 @end

@@ -451,4 +451,9 @@
     return macString;
 }
 
+
+- (NSString *)localizedString{
+    return kLocString(self);
+}
+
 @end

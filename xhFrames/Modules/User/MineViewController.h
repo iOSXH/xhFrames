@@ -6,9 +6,9 @@
 //  Copyright © 2018 xianghui. All rights reserved.
 //
 
-#import "XHBaseListViewController.h"
+#import "BaseListViewController.h"
 
-@interface MineViewController : XHBaseListViewController
+@interface MineViewController : BaseListViewController
 
 @end
 

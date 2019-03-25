@@ -33,8 +33,8 @@
     return UITableViewStyleGrouped;
 }
 
-- (XHHeaderRefreshType)headerType{
-    return XHHeaderRefreshTypeNone;
+- (RefreshHeaderType)headerType{
+    return RefreshHeaderTypeNone;
 }
 
 - (Class)cellClass{
@@ -171,7 +171,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSArray *ary = [self.datas objectAtIndex:indexPath.section];
-    XHBaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self.cellClass CellReuseIdentifier]];
+    BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self.cellClass CellReuseIdentifier]];
     cell.baseDelegate = self;
     cell.indexPath = indexPath;
     id data = [ary objectAtIndex:indexPath.row];

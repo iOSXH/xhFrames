@@ -123,4 +123,18 @@
 + (NSString *)advertisingUUID;
 + (NSString *)macString;
 
+
+
+/**
+ 国际化字符串
+
+ @return 国际化后的字符串
+ */
+- (NSString *)localizedString;
+
 @end
+
+
+
+
+

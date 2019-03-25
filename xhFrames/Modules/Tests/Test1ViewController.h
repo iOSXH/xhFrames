@@ -6,11 +6,11 @@
 //  Copyright © 2018 xianghui. All rights reserved.
 //
 
-#import "XHBaseViewController.h"
+#import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Test1ViewController : XHBaseViewController
+@interface Test1ViewController : BaseViewController
 
 @property (nonatomic, assign) NSInteger type;
 

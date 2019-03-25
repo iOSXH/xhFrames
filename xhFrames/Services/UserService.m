@@ -7,7 +7,7 @@
 //
 
 #import "UserService.h"
-#import "XHBaseHttpService.h"
+#import "BaseHttpService.h"
 //#import <UMShare/UMShare.h>
 
 @implementation UserService
@@ -16,7 +16,7 @@ IMPLEMENT_SINGLETON(UserService, sharedService)
 
 - (void)userLoginWithAccessToken:(NSString *)accessToken refreshToken:(NSString *)refreshToken openId:(NSString *)openId type:(NSInteger)type changeToken:(NSInteger)changeToken success:(void (^)(NSDictionary * _Nonnull, NSString * _Nonnull))success failure:(void (^)(NSError * _Nonnull))failure{
 //
-    [[XHBaseHttpService shareService] postRequestWithPath:kApi_User_LoginWechat parameter:@{@"code":accessToken,@"refreshToken":refreshToken,@"openId":openId,@"changeToken":@(changeToken)} complete:^(XHResultModel *requestResult, NSError *error) {
+    [[BaseHttpService shareService] postRequestWithPath:kApi_User_LoginWechat parameter:@{@"code":accessToken,@"refreshToken":refreshToken,@"openId":openId,@"changeToken":@(changeToken)} complete:^(ResultModel *requestResult, NSError *error) {
         if (error) {
             if (failure) {
                 failure(error);
@@ -65,7 +65,7 @@ IMPLEMENT_SINGLETON(UserService, sharedService)
         return;
     }
     
-    [[XHBaseHttpService shareService] postRequestWithPath:kApi_User_Logout parameter:nil complete:^(XHResultModel *requestResult, NSError *error) {
+    [[BaseHttpService shareService] postRequestWithPath:kApi_User_Logout parameter:nil complete:^(ResultModel *requestResult, NSError *error) {
         if (error) {
             if (failure) {
                 failure(error);
@@ -79,7 +79,7 @@ IMPLEMENT_SINGLETON(UserService, sharedService)
 }
 
 - (void)userUpdateUmengPushToken:(NSString *)token success:(void (^)(NSString *))success failure:(void (^)(NSError *))failure{
-    [[XHBaseHttpService shareService] postRequestWithPath:kBaseApiV1Path(kApi_Umeng_UpdateToken) parameter:@{@"deviceToken":getString(token)} complete:^(XHResultModel *requestResult, NSError *error) {
+    [[BaseHttpService shareService] postRequestWithPath:kBaseApiV1Path(kApi_Umeng_UpdateToken) parameter:@{@"deviceToken":getString(token)} complete:^(ResultModel *requestResult, NSError *error) {
         if (error) {
             if (failure) {
                 failure(error);
@@ -97,7 +97,7 @@ IMPLEMENT_SINGLETON(UserService, sharedService)
 //        keys = @[kAppConfigInfoKey_IOSReviewBuild];
 //    }
     
-    [[XHBaseHttpService shareService] postRequestWithPath:kApi_Config parameter:(keys.count<=0?@{}:@{@"keys":keys}) complete:^(XHResultModel *requestResult, NSError *error) {
+    [[BaseHttpService shareService] postRequestWithPath:kApi_Config parameter:(keys.count<=0?@{}:@{@"keys":keys}) complete:^(ResultModel *requestResult, NSError *error) {
         if (error) {
             if (failure) {
                 failure(error);

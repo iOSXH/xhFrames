@@ -30,15 +30,15 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MBProgressHUD.h>
 
-#import "XHCommonHeader.h"
+#import "CommonHeader.h"
 
-#import "XHThemeManager.h"
+#import "ThemeManager.h"
 
 #import "NSString+helper.h"
 #import "NSURL+helper.h"
 #import "UIView+helper.h"
 
-#import "XHCommonHelper.h"
+#import "CommonHelper.h"
 #import "AppTrackHelper.h"
 
 #import "AccountManager.h"

@@ -7,7 +7,7 @@
 //
 
 #import "MainTabBarController.h"
-#import "XHBaseNavigationController.h"
+#import "BaseNavigationController.h"
 #import "MineViewController.h"
 #import "LoginViewController.h"
 
@@ -27,16 +27,16 @@
     [[AccountManager sharedManager] initLoginState];
     
     MineViewController *mineVc = [[MineViewController alloc] init];
-    XHBaseNavigationController *mineNav = [[XHBaseNavigationController alloc] initWithRootViewController:mineVc];
+    BaseNavigationController *mineNav = [[BaseNavigationController alloc] initWithRootViewController:mineVc];
     mineVc.tabBarItem.title = @"";
     
     
     Test1ViewController *test1Vc = [[Test1ViewController alloc] init];
-    XHBaseNavigationController *test1Nav = [[XHBaseNavigationController alloc] initWithRootViewController:test1Vc];
+    BaseNavigationController *test1Nav = [[BaseNavigationController alloc] initWithRootViewController:test1Vc];
     test1Vc.tabBarItem.title = @"";
     
     Test2ViewController *test2Vc = [[Test2ViewController alloc] init];
-    XHBaseNavigationController *test2Nav = [[XHBaseNavigationController alloc] initWithRootViewController:test2Vc];
+    BaseNavigationController *test2Nav = [[BaseNavigationController alloc] initWithRootViewController:test2Vc];
     test2Vc.tabBarItem.title = @"";
     
     
@@ -82,12 +82,12 @@
         
         
         for (UIViewController *vc in self.viewControllers) {
-            if ([vc isKindOfClass:[XHBaseViewController class]]) {
-                [(XHBaseViewController *)vc refresh];
+            if ([vc isKindOfClass:[BaseViewController class]]) {
+                [(BaseViewController *)vc refresh];
             }else if ([vc isKindOfClass:[UINavigationController class]]) {
                 UIViewController *topVc = [[(UINavigationController *)vc viewControllers] firstObject];
-                if ([topVc isKindOfClass:[XHBaseViewController class]]) {
-                    [(XHBaseViewController *)topVc refresh];
+                if ([topVc isKindOfClass:[BaseViewController class]]) {
+                    [(BaseViewController *)topVc refresh];
                 }
             }
         }
@@ -130,13 +130,13 @@
     
     LoginViewController *loginVc = [[LoginViewController alloc] init];
     
-    XHBaseNavigationController *nav = [[XHBaseNavigationController alloc] initWithRootViewController:loginVc];
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:loginVc];
     
     [self presentViewController:nav animated:flag completion:nil];
 }
 
 
-//- (BOOL)tabBar:(XHBaseTabBar *)tabBar shouldSelectIndex:(NSInteger)index{
+//- (BOOL)tabBar:(BaseTabBar *)tabBar shouldSelectIndex:(NSInteger)index{
 //    
 //    
 //    if (index != 1 && [AccountManager sharedManager].loginState != LoginState_In) {
@@ -146,7 +146,7 @@
 //    return YES;
 //}
 
-- (void)tabBar:(XHBaseTabBar *)tabBar didSelectIndex:(NSInteger)index{
+- (void)tabBar:(BaseTabBar *)tabBar didSelectIndex:(NSInteger)index{
     [super tabBar:tabBar didSelectIndex:index];
     
     

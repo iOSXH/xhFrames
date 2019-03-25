@@ -6,9 +6,9 @@
 //  Copyright © 2018 xianghui. All rights reserved.
 //
 
-#import "XHBaseTabBarController.h"
+#import "BaseTabBarController.h"
 
-@interface MainTabBarController : XHBaseTabBarController
+@interface MainTabBarController : BaseTabBarController
 
 @property (nonatomic, assign) BOOL languageChanged;
 

@@ -14,29 +14,29 @@
 /**
  URL路由参数
  
- - XHRouterOption_New: 添加新页面
- - XHRouterOption_Existed: 如果存在跳转到已存在界面 否则New
- - XHRouterOption_Refresh: 如果存在刷新该页面 否则New
- - XHRouterOption_Close: 如果存在关闭当前页面
+ - RouterOption_New: 添加新页面
+ - RouterOption_Existed: 如果存在跳转到已存在界面 否则New
+ - RouterOption_Refresh: 如果存在刷新该页面 否则New
+ - RouterOption_Close: 如果存在关闭当前页面
  */
-typedef NS_ENUM(NSInteger, XHRouterOption) {
+typedef NS_ENUM(NSInteger, RouterOption) {
     
-    XHRouterOption_New = 1 << 0,
+    RouterOption_New = 1 << 0,
     
-    XHRouterOption_Existed = 1 << 1,
+    RouterOption_Existed = 1 << 1,
     
-    XHRouterOption_Refresh = 1 << 2,
+    RouterOption_Refresh = 1 << 2,
     
-    XHRouterOption_Close   = 1 << 3,
+    RouterOption_Close   = 1 << 3,
     
-    XHRouterOption_Present   = 1 << 4,
+    RouterOption_Present   = 1 << 4,
     
-    XHRouterOption_PresentNav   = 1 << 5,
+    RouterOption_PresentNav   = 1 << 5,
 };
 
 
 #pragma mark Block
-typedef void(^XHRouterCompleteBlock)(id result, NSError *error);
+typedef void(^RouterCompleteBlock)(id result, NSError *error);
 
 #pragma mark static NSString
 

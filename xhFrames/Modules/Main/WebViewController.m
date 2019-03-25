@@ -8,7 +8,7 @@
 
 #import "WebViewController.h"
 #import <WebKit/WebKit.h>
-#import "XHBaseNavView.h"
+#import "IntrinsicView.h"
 
 @interface WebViewController ()<WKNavigationDelegate,WKUIDelegate, UIScrollViewDelegate>
 
@@ -220,7 +220,7 @@
     
     
     
-    XHBaseNavView *leftView = [[XHBaseNavView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    IntrinsicView *leftView = [[IntrinsicView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     
     UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [backBtn setImage:kImageNamed(@"icon_nav_back") forState:UIControlStateNormal];

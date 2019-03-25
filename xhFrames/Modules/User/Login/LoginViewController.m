@@ -7,13 +7,13 @@
 //
 
 #import "LoginViewController.h"
-#import "XHExtendButton.h"
+#import "ExtendButton.h"
 #import "WebViewController.h"
 
 @interface LoginViewController ()<UITextFieldDelegate, YYTextKeyboardObserver>
 
 @property (nonatomic, strong) UIButton *wxLoginBtn;
-@property (nonatomic, strong) XHExtendButton *agreementSelectBtn;
+@property (nonatomic, strong) ExtendButton *agreementSelectBtn;
 @property (nonatomic, strong) UIButton *agreementBtn;
 
 
@@ -154,7 +154,7 @@
     
     
     
-    self.agreementSelectBtn = [XHExtendButton newAutoLayoutView];
+    self.agreementSelectBtn = [ExtendButton newAutoLayoutView];
     [self.agreementSelectBtn setImage:kImageNamed(@"icon_login_unselect") forState:UIControlStateNormal];
     [self.agreementSelectBtn setImage:kImageNamed(@"icon_login_unselect") forState:UIControlStateHighlighted];
     [self.agreementSelectBtn setImage:kImageNamed(@"icon_login_select") forState:UIControlStateSelected];

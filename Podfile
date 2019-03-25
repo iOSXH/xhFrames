@@ -8,7 +8,7 @@ inhibit_all_warnings!
 def common_pods
     
     pod 'AFNetworking'
-    pod 'YTKNetwork'
+    pod 'YTKNetwork', :git => 'https://github.com/iOSXH/YTKNetwork.git'
 
     pod 'PureLayout'
 

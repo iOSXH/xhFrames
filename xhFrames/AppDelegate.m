@@ -26,7 +26,7 @@
     // Override point for customization after application launch.
     
     
-    [[XHThemeManager sharedManager] registerDefaultTheme];
+    [[ThemeManager sharedManager] registerDefaultTheme];
 
     MainTabBarController *tab = [[MainTabBarController alloc] init];
     self.window.rootViewController = tab;

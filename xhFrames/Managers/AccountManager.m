@@ -7,8 +7,8 @@
 //
 
 #import "AccountManager.h"
-#import "XHDataHelper.h"
-#import "XHBaseHttpService.h"
+#import "DataHelper.h"
+#import "BaseHttpService.h"
 
 
 static NSString * const kAccountLastLoginUidKey = @"kAccountLastLoginUidKey";
@@ -23,7 +23,7 @@ static NSString * const kAppConfigKey = @"kAppConfigKey";
 @interface AccountManager ()
 @property (nonatomic, strong) AccountModel *account;      ///< 用户数据
 
-@property (nonatomic, strong) XHDataHelper *dataHelper;     ///< 数据存储工具
+@property (nonatomic, strong) DataHelper *dataHelper;     ///< 数据存储工具
 
 @property (nonatomic, assign) NSInteger lastLoginUid;       ///< 上传登录的uid
 
@@ -40,8 +40,8 @@ IMPLEMENT_SINGLETON(AccountManager, sharedManager);
 - (instancetype)init{
     self = [super init];
     if (self) {
-        [[XHBaseHttpService shareService] setNetChangeBlock:^(XHNetWorkStatus netWorkSatus) {
-            if (netWorkSatus != XHNetWorkStatusNotReachable) {
+        [[BaseHttpService shareService] setNetChangeBlock:^(NetWorkStatus netWorkSatus) {
+            if (netWorkSatus != NetWorkStatusNotReachable) {
                 [self updateAppConfigs];
             }
         }];
@@ -76,9 +76,9 @@ IMPLEMENT_SINGLETON(AccountManager, sharedManager);
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     if (lastLoginUid > 0) {
-        NSMutableSet *loginUids = [NSMutableSet setWithSet:(NSSet *)[[XHCommonDataHelper sharedHelper] objectForKey:kAccountLoginUidsKey]];
+        NSMutableSet *loginUids = [NSMutableSet setWithSet:(NSSet *)[[CommonDataHelper sharedHelper] objectForKey:kAccountLoginUidsKey]];
         [loginUids addObject:[NSString stringWithFormat:@"%@", @(lastLoginUid)]];
-        [[XHCommonDataHelper sharedHelper] setObject:loginUids forKey:kAccountLoginUidsKey];
+        [[CommonDataHelper sharedHelper] setObject:loginUids forKey:kAccountLoginUidsKey];
     }
 }
 
@@ -112,7 +112,7 @@ IMPLEMENT_SINGLETON(AccountManager, sharedManager);
     NSInteger lastLoginUid = self.lastLoginUid;
     if (lastLoginUid > 0) {
         
-        self.dataHelper = [[XHDataHelper alloc] initWithName:[NSString stringWithFormat:@"%@_%@", kAccountKey, @(lastLoginUid)]];
+        self.dataHelper = [[DataHelper alloc] initWithName:[NSString stringWithFormat:@"%@_%@", kAccountKey, @(lastLoginUid)]];
         
         NSDictionary *data = (NSDictionary *)[self.dataHelper objectForKey:kAccountKey];
         AccountModel *account = [AccountModel modelWithDictionary:data];
@@ -140,7 +140,7 @@ IMPLEMENT_SINGLETON(AccountManager, sharedManager);
     
     AccountModel *account = [AccountModel modelWithDictionary:data];
     if (account) {
-        self.dataHelper = [[XHDataHelper alloc] initWithName:[NSString stringWithFormat:@"%@_%@", kAccountKey, @(account.User.uid)]];
+        self.dataHelper = [[DataHelper alloc] initWithName:[NSString stringWithFormat:@"%@_%@", kAccountKey, @(account.User.uid)]];
         
         [self.dataHelper setObject:data forKey:kAccountKey];
         
@@ -180,7 +180,7 @@ IMPLEMENT_SINGLETON(AccountManager, sharedManager);
 - (void)updateAppConfig:(NSDictionary *)dic{
     self.appConfigs = dic;
     
-    [[XHCommonDataHelper sharedHelper] setObject:dic forKey:kAppConfigKey];
+    [[CommonDataHelper sharedHelper] setObject:dic forKey:kAppConfigKey];
     
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kAppConfigInfoDidChangeKey object:nil];

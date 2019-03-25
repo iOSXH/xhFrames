@@ -6,10 +6,10 @@
 //  Copyright © 2018 xianghui. All rights reserved.
 //
 
-#import "XHBaseViewController.h"
+#import "BaseViewController.h"
 
 
-@interface WebViewController : XHBaseViewController
+@interface WebViewController : BaseViewController
 
 @property (nonatomic, strong) NSURL *url;
 

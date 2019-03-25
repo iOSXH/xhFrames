@@ -11,9 +11,9 @@
 
 #import "NSURL+QueryDictionary.h"
 
-#import "XHHttpServiceHeader.h"
+#import "HttpServiceHeader.h"
 
-#import "XHBaseNavigationController.h"
+#import "BaseNavigationController.h"
 #import "WebViewController.h"
 #import "LanguageSettingsViewController.h"
 
@@ -112,37 +112,37 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
 
 #pragma mark Router
 + (void)routerUrlWithPath:(NSString *)path{
-    [[URLRouter sharedRouter] routerUrlWithUrl:[URLRouter urlRouterWithPath:path] extra:nil options:XHRouterOption_New fromNav:nil complete:nil];
+    [[URLRouter sharedRouter] routerUrlWithUrl:[URLRouter urlRouterWithPath:path] extra:nil options:RouterOption_New fromNav:nil complete:nil];
 }
 
 + (void)routerUrlWithPath:(NSString *)path params:(NSDictionary *)params{
-    [[URLRouter sharedRouter] routerUrlWithUrl:[[URLRouter sharedRouter] urlRouterWithPath:path component:nil params:params] extra:nil options:XHRouterOption_New fromNav:nil complete:nil];
+    [[URLRouter sharedRouter] routerUrlWithUrl:[[URLRouter sharedRouter] urlRouterWithPath:path component:nil params:params] extra:nil options:RouterOption_New fromNav:nil complete:nil];
 }
 
 + (void)routerUrlWithURL:(NSURL *)url{
-    [[URLRouter sharedRouter] routerUrlWithUrl:url extra:nil options:XHRouterOption_New fromNav:nil complete:nil];
+    [[URLRouter sharedRouter] routerUrlWithUrl:url extra:nil options:RouterOption_New fromNav:nil complete:nil];
 }
 
 + (void)routerUrlWithURLStr:(NSString *)urlStr{
-    [[URLRouter sharedRouter] routerUrlWithUrl:[urlStr URLByCheckCharacter] extra:nil options:XHRouterOption_New fromNav:nil complete:nil];
+    [[URLRouter sharedRouter] routerUrlWithUrl:[urlStr URLByCheckCharacter] extra:nil options:RouterOption_New fromNav:nil complete:nil];
 }
 
 + (void)routerUrlWithPath:(NSString *)path fromNav:(UINavigationController *)nav{
-    [[URLRouter sharedRouter] routerUrlWithUrl:[URLRouter urlRouterWithPath:path] extra:nil options:XHRouterOption_New fromNav:nav complete:nil];
+    [[URLRouter sharedRouter] routerUrlWithUrl:[URLRouter urlRouterWithPath:path] extra:nil options:RouterOption_New fromNav:nav complete:nil];
 }
 
 + (void)routerUrlWithPath:(NSString *)path params:(NSDictionary *)params fromNav:(UINavigationController *)nav{
-    [[URLRouter sharedRouter] routerUrlWithUrl:[[URLRouter sharedRouter] urlRouterWithPath:path component:nil params:params] extra:nil options:XHRouterOption_New fromNav:nav complete:nil];
+    [[URLRouter sharedRouter] routerUrlWithUrl:[[URLRouter sharedRouter] urlRouterWithPath:path component:nil params:params] extra:nil options:RouterOption_New fromNav:nav complete:nil];
 }
 
-+ (void)routerUrlWithUrl:(NSURL *)url extra:(NSDictionary *)extra fromNav:(UINavigationController *)nav complete:(XHRouterCompleteBlock)completeBlock{
-    [[URLRouter sharedRouter] routerUrlWithUrl:url extra:extra options:XHRouterOption_New fromNav:nav complete:completeBlock];
++ (void)routerUrlWithUrl:(NSURL *)url extra:(NSDictionary *)extra fromNav:(UINavigationController *)nav complete:(RouterCompleteBlock)completeBlock{
+    [[URLRouter sharedRouter] routerUrlWithUrl:url extra:extra options:RouterOption_New fromNav:nav complete:completeBlock];
 }
 
-- (void)routerUrlWithUrl:(NSURL *)url extra:(NSDictionary *)extra options:(XHRouterOption)options fromNav:(UINavigationController *)nav complete:(XHRouterCompleteBlock)completeBlock{
+- (void)routerUrlWithUrl:(NSURL *)url extra:(NSDictionary *)extra options:(RouterOption)options fromNav:(UINavigationController *)nav complete:(RouterCompleteBlock)completeBlock{
     if (!url) {
         if (completeBlock) {
-            completeBlock(nil, errorBuild(XHErrorCode_Custom, kXHCostomErrorDomain, @"路由URL为空"));
+            completeBlock(nil, errorBuild(ServiceErrorCode_Custom, kCostomErrorDomain, @"路由URL为空"));
         }
         return;
     }
@@ -152,7 +152,7 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
         UIViewController *vc = [self viewControllerWithUrl:url extra:extra];
         if (!vc) {
             if (completeBlock) {
-                completeBlock(nil, errorBuild(XHErrorCode_Custom, kXHCostomErrorDomain, @"路由不存在"));
+                completeBlock(nil, errorBuild(ServiceErrorCode_Custom, kCostomErrorDomain, @"路由不存在"));
             }
             return;
         }
@@ -163,13 +163,13 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
         UINavigationController *navc = nav?:[URLRouter currentNavigationController];
         NSMutableArray *vcs = [NSMutableArray arrayWithArray:navc.viewControllers];
         
-        if(options & XHRouterOption_Close){
+        if(options & RouterOption_Close){
             [vcs removeLastObject];
         }
         
         NSInteger existedIndex = -1;
-        if ([vc isKindOfClass:[XHBaseViewController class]] && (options & XHRouterOption_Existed)) {
-            XHBaseViewController *baseVc = (XHBaseViewController *)vc;
+        if ([vc isKindOfClass:[BaseViewController class]] && (options & RouterOption_Existed)) {
+            BaseViewController *baseVc = (BaseViewController *)vc;
             for (NSInteger i = 0; i < vcs.count; i ++ ) {
                 id obj = [vcs objectAtIndex:i];
                 if ([baseVc isEqualToVc:obj]) {
@@ -178,8 +178,8 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
                 }
             }
             
-            if(existedIndex >= 0 && (options & XHRouterOption_Refresh)){
-                XHBaseViewController *existedVc = [vcs objectAtIndex:existedIndex];
+            if(existedIndex >= 0 && (options & RouterOption_Refresh)){
+                BaseViewController *existedVc = [vcs objectAtIndex:existedIndex];
                 [existedVc refresh];
             }
         }
@@ -189,10 +189,10 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
             [navc setViewControllers:newVcs animated:YES];
         }else{
             UIViewController *presentedVc = nil;
-            if(options & XHRouterOption_Present){
+            if(options & RouterOption_Present){
                 presentedVc = vc;
-            }else if (options & XHRouterOption_PresentNav){
-                XHBaseNavigationController *nav = [[XHBaseNavigationController alloc] initWithRootViewController:vc];
+            }else if (options & RouterOption_PresentNav){
+                BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vc];
                 presentedVc = nav;
             }
             if (presentedVc) {
@@ -250,7 +250,7 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
 }
 
 #pragma mark 根据URL做处理
-- (BOOL)actionWithUrl:(NSURL *)url extra:(NSDictionary *)extra complete:(XHRouterCompleteBlock)completeBlock{
+- (BOOL)actionWithUrl:(NSURL *)url extra:(NSDictionary *)extra complete:(RouterCompleteBlock)completeBlock{
     BOOL result = NO;
 
     NSString *scheme = url.scheme;
@@ -324,7 +324,7 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
 
 
 #pragma mark 唤起微信小程序
-- (void)weixinLaunchMiniProgram:(NSURL *)url extra:(NSDictionary *)extra complete:(XHRouterCompleteBlock)completeBlock{
+- (void)weixinLaunchMiniProgram:(NSURL *)url extra:(NSDictionary *)extra complete:(RouterCompleteBlock)completeBlock{
     NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:[url uq_queryDictionary]];
     if (extra) {
         [params addEntriesFromDictionary:extra];
@@ -333,7 +333,7 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
 }
 
 #pragma mark 分享微信小程序
-- (void)weixinShareMiniProgram:(NSURL *)url extra:(NSDictionary *)extra complete:(XHRouterCompleteBlock)completeBlock{
+- (void)weixinShareMiniProgram:(NSURL *)url extra:(NSDictionary *)extra complete:(RouterCompleteBlock)completeBlock{
     NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:[url uq_queryDictionary]];
     if (extra) {
         [params addEntriesFromDictionary:extra];
@@ -342,7 +342,7 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
 }
 
 #pragma mark 分享微信图片
-- (void)weixinShareImage:(NSURL *)url extra:(NSDictionary *)extra complete:(XHRouterCompleteBlock)completeBlock{
+- (void)weixinShareImage:(NSURL *)url extra:(NSDictionary *)extra complete:(RouterCompleteBlock)completeBlock{
     NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:[url uq_queryDictionary]];
     if (extra) {
         [params addEntriesFromDictionary:extra];
@@ -351,7 +351,7 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
 }
 
 
-- (void)systemShareWithItems:(NSArray *)items complete:(XHRouterCompleteBlock)completeBlock{
+- (void)systemShareWithItems:(NSArray *)items complete:(RouterCompleteBlock)completeBlock{
     UIActivityViewController *activityController=[[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
     activityController.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
         if (completed) {
@@ -360,7 +360,7 @@ IMPLEMENT_SINGLETON(URLRouter, sharedRouter)
             }
         }else{
             if (completeBlock) {
-                completeBlock(nil,activityError?:errorBuild(XHErrorCode_Cancel, kXHCostomErrorDomain, @"分享取消"));
+                completeBlock(nil,activityError?:errorBuild(ServiceErrorCode_Cancel, kCostomErrorDomain, @"分享取消"));
             }
         }
     };

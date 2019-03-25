@@ -6,10 +6,10 @@
 //  Copyright © 2018 xianghui. All rights reserved.
 //
 
-#import "XHBaseTableViewCell.h"
+#import "BaseTableViewCell.h"
 
 
-@interface SettingTableViewCell : XHBaseTableViewCell
+@interface SettingTableViewCell : BaseTableViewCell
 
 @end
 
